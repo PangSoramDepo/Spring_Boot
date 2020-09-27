@@ -1,0 +1,21 @@
+***Spring Features:
+_POJO
+_Dependency Injection
+_MVC
+_Rest
+_Security
+_Batch
+_Data
+_AOP
+
+*Spring Framework use singleton design partern, it's mean you get only one instance (@component)
+
+*@scope(value="protoype") : not singleton, it's create instance when you request for get bean, so it's create a time when one request
+
+*Spring Boot in jar file have tomcat so we can start without server
+
+*@component : create instane of that class and store it to bean (Spring Bean in Spring Container)
+
+*@Autowire  : initialize that instane by object in bean (search by type)
+
+*@Qualifier : search by name
