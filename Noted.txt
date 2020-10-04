@@ -19,3 +19,16 @@ _AOP
 *@Autowire  : initialize that instane by object in bean (search by type)
 
 *@Qualifier : search by name
+
+*@ResponseBody : return "home" ban home ; if not using ResponseBody will return view home.jsp
+
+
+_53mn      :   jps
+_1h 30mn   :   dol db
+_1h 50mn   :   Syntax create interface for CrudRepository
+
+*** CrudRepository if we use method findAll it will "cannot convert from Iterable<Alien> to List<Alien>" , so if we use JpaRepository we dont worry about it
+
+*** After working with Korean project first i think query data from db we need to create xml that write SQL but not like that, if we use JpaRepository we not need to do that but we also can write raw query
+
+*** Raw query use in Repository is JS QL , Syntax the same as HQL , Syntax the same as SQL
