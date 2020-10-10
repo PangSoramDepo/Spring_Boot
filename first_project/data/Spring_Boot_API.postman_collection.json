@@ -29,6 +29,16 @@
 		{
 			"name": "Insert",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYW5nc29yYW1kZXBvIiwiZXhwIjoxNjAyMzQ5ODkzLCJpYXQiOjE2MDIzMzE4OTN9.PVSJW8Q3b0Oxz7XbxiOa-jJmeJqdtC3QajFfLB2B_5EJrFn75BnyMD_G95rGz6QPgrXoJloFqMmBjMFS8DFV6Q",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -133,6 +143,16 @@
 		{
 			"name": "All",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYW5nc29yYW1kZXBvIiwiZXhwIjoxNjAyMzQ5ODkzLCJpYXQiOjE2MDIzMzE4OTN9.PVSJW8Q3b0Oxz7XbxiOa-jJmeJqdtC3QajFfLB2B_5EJrFn75BnyMD_G95rGz6QPgrXoJloFqMmBjMFS8DFV6Q",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -153,6 +173,16 @@
 		{
 			"name": "Find_By_Id",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYW5nc29yYW1kZXBvIiwiZXhwIjoxNjAyMzQ5ODkzLCJpYXQiOjE2MDIzMzE4OTN9.PVSJW8Q3b0Oxz7XbxiOa-jJmeJqdtC3QajFfLB2B_5EJrFn75BnyMD_G95rGz6QPgrXoJloFqMmBjMFS8DFV6Q",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -166,6 +196,68 @@
 						"api",
 						"aliens",
 						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"pangsoramdepo\",\r\n    \"password\" : \"depo1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"pangsoramdepo\",\r\n    \"password\" : \"depo1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
 					]
 				}
 			},
