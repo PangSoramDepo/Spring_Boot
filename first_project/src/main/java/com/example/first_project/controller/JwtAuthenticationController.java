@@ -2,6 +2,7 @@ package com.example.first_project.controller;
 
 import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -17,6 +18,7 @@ import com.example.first_project.service.JwtUserDetailsService;
 import com.example.first_project.config.JwtTokenUtil;
 import com.example.first_project.model.JwtRequest;
 import com.example.first_project.model.JwtResponse;
+import com.example.first_project.model.UserDTO;
 
 @RestController
 @CrossOrigin
@@ -35,6 +37,16 @@ public class JwtAuthenticationController {
 		final String token = jwtTokenUtil.generateToken(userDetails);
 		return ResponseEntity.ok(new JwtResponse(token));
 	}
+
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
+		try{
+			return ResponseEntity.ok(userDetailsService.save(user));
+		}catch(Exception e){
+			return new ResponseEntity<String>(e.getMessage(),HttpStatus.OK);
+		}
+	}
+
 	private void authenticate(String username, String password) throws Exception {
 		try {
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
